@@ -31,37 +31,41 @@ function Queue(){
 
 }
 
-//test
-let q = new Queue()
-console.log(q.isEmpty())
-q.enqueue('a')
-q.enqueue('e')
-q.enqueue('r')
-q.enqueue('g')
-console.log(q.front())
-console.log(q.isEmpty())
-console.log(q.size())
-console.log(q.toString())
-console.log(q.dequeue())
-console.log(q)
+module.exports = Queue
 
 
-//应用：击鼓传花
-function passGame(list, num){
-    let queue = new Queue()
-    for(let i = 0; i < list.length;i++){
-        queue.enqueue(list[i])
-    }
-    while(queue.size() > 1){
-        for(let i = 0;i < num - 1;i++){
-            //未到对应编号的人，排到后面
-            queue.enqueue(queue.dequeue())
-        }
-        //数到对应编号的人，出局
-        queue.dequeue()
-    }
-    // console.log(queue.front(),queue.size())
-    return list.indexOf(queue.front())
-}
-console.log(passGame(['a','b'],5))
-console.log(passGame(['a','b','c'],5))
+
+// //test
+// let q = new Queue()
+// console.log(q.isEmpty())
+// q.enqueue('a')
+// q.enqueue('e')
+// q.enqueue('r')
+// q.enqueue('g')
+// console.log(q.front())
+// console.log(q.isEmpty())
+// console.log(q.size())
+// console.log(q.toString())
+// console.log(q.dequeue())
+// console.log(q)
+
+
+// //应用：击鼓传花
+// function passGame(list, num){
+//     let queue = new Queue()
+//     for(let i = 0; i < list.length;i++){
+//         queue.enqueue(list[i])
+//     }
+//     while(queue.size() > 1){
+//         for(let i = 0;i < num - 1;i++){
+//             //未到对应编号的人，排到后面
+//             queue.enqueue(queue.dequeue())
+//         }
+//         //数到对应编号的人，出局
+//         queue.dequeue()
+//     }
+//     // console.log(queue.front(),queue.size())
+//     return list.indexOf(queue.front())
+// }
+// console.log(passGame(['a','b'],5))
+// console.log(passGame(['a','b','c'],5))

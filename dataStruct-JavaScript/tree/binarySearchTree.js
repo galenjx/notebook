@@ -3,6 +3,7 @@ function BinarySearchTree () {
 
     //1.节点的类
     function Node (key) {
+        // this.isDelete = false//删除节点时可以打一个标记，不去真正删除
         this.key = key
         this.left = null
         this.right = null
