@@ -1,7 +1,7 @@
 // return 的Vnode格式
 export const vNode = (sel, data, children, text, elm, key) => {
     return {
-        sel, data, children, text, elm, key
+        sel, data, children, text, elm, key:data.key
     }
 }
 
@@ -19,7 +19,7 @@ export const h = (sel, b, c) => {
     // c只要有占位，即有三个参数
     if (c !== undefined) {
         if (b != null) {
-            b = data
+            data = b
         }
         // 判断三种类型 array，text h
         if (Array.isArray(c)) {

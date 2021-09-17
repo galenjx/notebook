@@ -1,4 +1,7 @@
+import { isprimitive } from './h'
 export const createElement = (vNode) => {
+    // 纯文本
+    
     //  创建元素
     let dom = document.createElement(vNode.sel)
     
