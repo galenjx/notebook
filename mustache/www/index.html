@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello</h1>
+    <div id="container"></div>
+</body>
+<script src="bundle.js">
+    
+</script>
+<script>
+    let template = `
+    <div>
+        {{#studends}}
+        <li>
+                学生{{name}}的爱好是
+                <ol>
+                    {{#hobby}}
+                    <li>{{.}}</li>
+                    {{/hobby}}
+                </ol>
+        </li>
+        {{/studends}}
+    </div>
+    `,
+    data = {
+        studends:[
+            {name: 'xiaoming',hobby: ['pingpeng','jump']},
+            {name: 'lihua',hobby: ['pingpeng','jump','hide']},
+            {name: 'johe',hobby: ['pingpeng','swim','jump']}
+        ]
+    }
+
+    let dom = templateEng.render(template, data)
+
+    document.getElementById('container').innerHTML = dom
+</script>
+</html>
