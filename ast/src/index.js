@@ -1,5 +1,5 @@
 
-// 寻找字符串中连续重复次数最多的字符
+// 1，寻找字符串中连续重复次数最多的字符
 const str = 'aaaaaaaabbbbbbbbbbbbbbbbbcccccccccdddddd'
 function getRepeat(str) {
     if (!str) return
